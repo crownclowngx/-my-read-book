@@ -1,0 +1,59 @@
+{
+  "tts": {
+    "provider": "edge",
+    "profiles": {
+      "edge": {
+        "voice": "zh-CN-YunxiNeural",
+        "model": ""
+      }
+    },
+    "rate": 1,
+    "welcomed": true,
+    "recent": [
+      {
+        "id": "edge",
+        "voice": "zh-CN-YunxiNeural",
+        "model": ""
+      }
+    ]
+  },
+  "share": {
+    "format": "mp4",
+    "videos": [
+      "portrait"
+    ],
+    "visual": "spectrum",
+    "speed": 1,
+    "cover": true,
+    "outro": true,
+    "srt": false,
+    "coverImage": false,
+    "embed": true,
+    "name": "",
+    "avatar": "",
+    "background": "",
+    "folder": "",
+    "accounts": []
+  },
+  "readingProgress": {
+    "AI工程大模型应用开发实战/第三章：评估方法论/第三章：评估方法论.md": {
+      "fingerprint": "36787-xfuioo-vxd3hi",
+      "offset": 681,
+      "ended": false,
+      "at": 1792107580947
+    },
+    "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md": {
+      "fingerprint": "39030-1av4fxr-k6mij7",
+      "offset": 5840,
+      "ended": false,
+      "at": 1792109191988
+    }
+  },
+  "asr": {
+    "engine": "",
+    "profiles": [],
+    "language": "auto",
+    "mode": "live",
+    "keepAudio": true
+  }
+}

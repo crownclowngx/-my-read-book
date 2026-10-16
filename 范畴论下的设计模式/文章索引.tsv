@@ -1,0 +1,130 @@
+﻿编号 / ID	主题层级 / Level	中文标题 / Chinese title	原始标题 / Original title	来源 / Source
+A000	0	从设计模式到范畴论	From design patterns to category theory	https://blog.ploeh.dk/2017/10/04/from-design-patterns-to-category-theory/
+A001	0	幺半群、半群及相关结构	Monoids, semigroups, and friends	https://blog.ploeh.dk/2017/10/05/monoids-semigroups-and-friends/
+A002	1	幺半群	Monoids	https://blog.ploeh.dk/2017/10/06/monoids/
+A003	2	角度加法幺半群	Angular addition monoid	https://blog.ploeh.dk/2018/07/16/angular-addition-monoid/
+A004	2	字符串、列表与序列幺半群	Strings, lists, and sequences as a monoid	https://blog.ploeh.dk/2017/10/10/strings-lists-and-sequences-as-a-monoid/
+A005	2	货币幺半群	Money monoid	https://blog.ploeh.dk/2017/10/16/money-monoid/
+A006	2	凸包幺半群	Convex hull monoid	https://blog.ploeh.dk/2017/10/23/convex-hull-monoid/
+A007	2	元组幺半群	Tuple monoids	https://blog.ploeh.dk/2017/10/30/tuple-monoids/
+A008	2	函数幺半群	Function monoids	https://blog.ploeh.dk/2017/11/06/function-monoids/
+A009	2	自同态幺半群	Endomorphism monoid	https://blog.ploeh.dk/2017/11/13/endomorphism-monoid/
+A010	2	Maybe 幺半群	Maybe monoids	https://blog.ploeh.dk/2018/04/03/maybe-monoids/
+A011	2	Lazy 幺半群	Lazy monoids	https://blog.ploeh.dk/2019/04/15/lazy-monoids/
+A012	2	幺半群的累积	Monoids accumulate	https://blog.ploeh.dk/2017/11/20/monoids-accumulate/
+A013	1	半群	Semigroups	https://blog.ploeh.dk/2017/11/27/semigroups/
+A014	2	包围盒半群	Bounding box semigroup	https://blog.ploeh.dk/2017/12/04/bounding-box-semigroup/
+A015	2	半群的累积	Semigroups accumulate	https://blog.ploeh.dk/2017/12/11/semigroups-accumulate/
+A016	1	拟群	Quasigroups	https://blog.ploeh.dk/2017/12/18/quasigroups/
+A017	1	原群（Magma）	Magmas	https://blog.ploeh.dk/2017/12/27/magmas/
+A018	2	石头剪刀布原群	Rock Paper Scissors magma	https://blog.ploeh.dk/2017/12/28/rock-paper-scissors-magma/
+A019	2	颜色混合原群	Colour-mixing magma	https://blog.ploeh.dk/2018/01/02/colour-mixing-magma/
+A020	0	函子、应用函子及相关结构	Functors, applicatives, and friends	https://blog.ploeh.dk/2018/03/19/functors-applicatives-and-friends/
+A021	1	函子	Functors	https://blog.ploeh.dk/2018/03/22/functors/
+A022	2	Maybe 函子	The Maybe functor	https://blog.ploeh.dk/2018/03/26/the-maybe-functor/
+A023	2	Either 的单参数函子视角	An Either functor	https://blog.ploeh.dk/2019/01/14/an-either-functor/
+A024	2	树函子	A Tree functor	https://blog.ploeh.dk/2018/08/06/a-tree-functor/
+A025	2	玫瑰树的函子视角	A rose tree functor	https://blog.ploeh.dk/2019/08/19/a-rose-tree-functor/
+A026	2	Visitor 函子	A Visitor functor	https://blog.ploeh.dk/2018/08/13/a-visitor-functor/
+A027	2	响应式函子	Reactive functor	https://blog.ploeh.dk/2018/08/20/reactive-functor/
+A028	2	Identity 函子	The Identity functor	https://blog.ploeh.dk/2018/09/03/the-identity-functor/
+A029	2	Lazy 函子	The Lazy functor	https://blog.ploeh.dk/2018/09/10/the-lazy-functor/
+A030	2	异步函子	Asynchronous functors	https://blog.ploeh.dk/2018/09/24/asynchronous-functors/
+A031	2	Const 函子	The Const functor	https://blog.ploeh.dk/2024/10/07/the-const-functor/
+A032	2	State 函子	The State functor	https://blog.ploeh.dk/2021/07/19/the-state-functor/
+A033	2	Reader 函子	The Reader functor	https://blog.ploeh.dk/2021/08/30/the-reader-functor/
+A034	2	IO 函子	The IO functor	https://blog.ploeh.dk/2020/06/22/the-io-functor/
+A035	2	单态函子	Monomorphic functors	https://blog.ploeh.dk/2020/10/19/monomorphic-functors/
+A036	2	Set 不是函子？——须结合勘误阅读	Set is not a functor	https://blog.ploeh.dk/2018/12/03/set-is-not-a-functor/
+A037	1	应用函子	Applicative functors	https://blog.ploeh.dk/2018/10/01/applicative-functors/
+A038	2	完整的一副牌	Full deck	https://blog.ploeh.dk/2018/10/08/full-deck/
+A039	2	应用式密码列表	An applicative password list	https://blog.ploeh.dk/2018/10/15/an-applicative-password-list/
+A040	2	函数的应用式组合	Applicative combinations of functions	https://blog.ploeh.dk/2018/10/22/applicative-combinations-of-functions/
+A041	2	Maybe 应用函子	The Maybe applicative functor	https://blog.ploeh.dk/2018/10/29/the-maybe-applicative-functor/
+A042	2	应用式验证	Applicative validation	https://blog.ploeh.dk/2018/11/05/applicative-validation/
+A043	2	测试数据生成器应用函子	The Test Data Generator applicative functor	https://blog.ploeh.dk/2018/11/26/the-test-data-generator-applicative-functor/
+A044	2	F# 中的丹麦个人编号	Danish CPR numbers in F#	https://blog.ploeh.dk/2018/12/10/danish-cpr-numbers-in-f/
+A045	2	Lazy 应用函子	The Lazy applicative functor	https://blog.ploeh.dk/2018/12/17/the-lazy-applicative-functor/
+A046	2	应用函子中的幺半群——推广猜想	Applicative monoids	https://blog.ploeh.dk/2019/04/22/applicative-monoids/
+A047	1	双函子	Bifunctors	https://blog.ploeh.dk/2018/12/24/bifunctors/
+A048	2	元组双函子	Tuple bifunctor	https://blog.ploeh.dk/2018/12/31/tuple-bifunctor/
+A049	2	Either 双函子	Either bifunctor	https://blog.ploeh.dk/2019/01/07/either-bifunctor/
+A050	2	玫瑰树双函子	Rose tree bifunctor	https://blog.ploeh.dk/2019/08/12/rose-tree-bifunctor/
+A051	1	逆变函子	Contravariant functors	https://blog.ploeh.dk/2021/09/02/contravariant-functors/
+A052	2	命令处理器逆变函子	The Command Handler contravariant functor	https://blog.ploeh.dk/2021/09/06/the-command-handler-contravariant-functor/
+A053	2	Specification 逆变函子	The Specification contravariant functor	https://blog.ploeh.dk/2021/09/09/the-specification-contravariant-functor/
+A054	2	等价关系逆变函子	The Equivalence contravariant functor	https://blog.ploeh.dk/2021/09/27/the-equivalence-contravariant-functor/
+A055	2	Reader 的逆变视角	Reader as a contravariant functor	https://blog.ploeh.dk/2021/10/04/reader-as-a-contravariant-functor/
+A056	2	函子变型与 C# 变型	Functor variance compared to C#'s notion of variance	https://blog.ploeh.dk/2021/10/25/functor-variance-compared-to-cs-notion-of-variance/
+A057	2	逆变依赖注入	Contravariant Dependency Injection	https://blog.ploeh.dk/2022/03/21/contravariant-dependency-injection/
+A058	1	Profunctor（输入逆变、输出协变）	Profunctors	https://blog.ploeh.dk/2021/11/01/profunctors/
+A059	2	Reader 的 Profunctor 视角	Reader as a profunctor	https://blog.ploeh.dk/2021/11/08/reader-as-a-profunctor/
+A060	1	不变函子	Invariant functors	https://blog.ploeh.dk/2022/08/01/invariant-functors/
+A061	2	自同态不变函子	Endomorphism as an invariant functor	https://blog.ploeh.dk/2022/08/08/endomorphism-as-an-invariant-functor/
+A062	2	自然变换的不变函子视角	Natural transformations as invariant functors	https://blog.ploeh.dk/2022/08/29/natural-transformations-as-invariant-functors/
+A063	2	普通函子的不变视角	Functors as invariant functors	https://blog.ploeh.dk/2022/12/26/functors-as-invariant-functors/
+A064	2	逆变函子的不变视角	Contravariant functors as invariant functors	https://blog.ploeh.dk/2023/02/06/contravariant-functors-as-invariant-functors/
+A065	1	Monad	Monads	https://blog.ploeh.dk/2022/03/28/monads/
+A066	2	Kleisli 复合	Kleisli composition	https://blog.ploeh.dk/2022/04/04/kleisli-composition/
+A067	2	Monad 法则	Monad laws	https://blog.ploeh.dk/2022/04/11/monad-laws/
+A068	2	列表 Monad	The List monad	https://blog.ploeh.dk/2022/04/19/the-list-monad/
+A069	2	Maybe Monad	The Maybe monad	https://blog.ploeh.dk/2022/04/25/the-maybe-monad/
+A070	2	Either Monad	An Either monad	https://blog.ploeh.dk/2022/05/09/an-either-monad/
+A071	2	Identity Monad	The Identity monad	https://blog.ploeh.dk/2022/05/16/the-identity-monad/
+A072	2	Lazy Monad	The Lazy monad	https://blog.ploeh.dk/2022/05/30/the-lazy-monad/
+A073	2	异步 Monad	Asynchronous monads	https://blog.ploeh.dk/2022/06/06/asynchronous-monads/
+A074	2	State Monad	The State monad	https://blog.ploeh.dk/2022/06/20/the-state-monad/
+A075	2	Reader Monad	The Reader monad	https://blog.ploeh.dk/2022/11/14/the-reader-monad/
+A076	2	响应式 Monad	Reactive monad	https://blog.ploeh.dk/2025/03/03/reactive-monad/
+A077	2	IO Monad	The IO monad	https://blog.ploeh.dk/2023/01/09/the-io-monad/
+A078	2	测试数据生成器 Monad	Test Data Generator monad	https://blog.ploeh.dk/2023/02/27/test-data-generator-monad/
+A079	1	函子之间的关系	Functor relationships	https://blog.ploeh.dk/2022/07/11/functor-relationships/
+A080	2	自然变换	Natural transformations	https://blog.ploeh.dk/2022/07/18/natural-transformations/
+A081	2	函子积	Functor products	https://blog.ploeh.dk/2024/09/16/functor-products/
+A082	2	函子和	Functor sums	https://blog.ploeh.dk/2024/10/14/functor-sums/
+A083	2	函子复合	Functor compositions	https://blog.ploeh.dk/2024/10/28/functor-compositions/
+A084	2	遍历与顺序交换	Traversals	https://blog.ploeh.dk/2024/11/11/traversals/
+A085	2	嵌套 Monad	Nested monads	https://blog.ploeh.dk/2024/11/25/nested-monads/
+A086	0	软件设计同构	Software design isomorphisms	https://blog.ploeh.dk/2018/01/08/software-design-isomorphisms/
+A087	1	Unit 同构	Unit isomorphisms	https://blog.ploeh.dk/2018/01/15/unit-isomorphisms/
+A088	1	函数同构	Function isomorphisms	https://blog.ploeh.dk/2018/01/22/function-isomorphisms/
+A089	1	参数列表同构	Argument list isomorphisms	https://blog.ploeh.dk/2018/01/29/argument-list-isomorphisms/
+A090	1	柯里化与反柯里化同构	Uncurry isomorphisms	https://blog.ploeh.dk/2018/02/05/uncurry-isomorphisms/
+A091	1	对象同构	Object isomorphisms	https://blog.ploeh.dk/2018/02/12/object-isomorphisms/
+A092	1	抽象类与依赖注入同构	Abstract class isomorphism	https://blog.ploeh.dk/2018/02/19/abstract-class-isomorphism/
+A093	1	继承与组合同构	Inheritance-composition isomorphism	https://blog.ploeh.dk/2018/02/26/inheritance-composition-isomorphism/
+A094	1	Tester–Doer 同构	Tester-Doer isomorphisms	https://blog.ploeh.dk/2019/07/15/tester-doer-isomorphisms/
+A095	1	Result 与异常：并非严格同构	Result isomorphism	https://blog.ploeh.dk/2025/10/15/result-isomorphism/
+A096	1	Builder 的多种同构表示	Builder isomorphisms	https://blog.ploeh.dk/2020/02/10/builder-isomorphisms/
+A097	0	Church 编码	Church encoding	https://blog.ploeh.dk/2018/05/22/church-encoding/
+A098	1	Church 编码的布尔值	Church-encoded Boolean values	https://blog.ploeh.dk/2018/05/24/church-encoded-boolean-values/
+A099	1	Church 编码的自然数	Church-encoded natural numbers	https://blog.ploeh.dk/2018/05/28/church-encoded-natural-numbers/
+A100	1	Church 编码的 Maybe	Church-encoded Maybe	https://blog.ploeh.dk/2018/06/04/church-encoded-maybe/
+A101	1	Church 编码的 Either	Church-encoded Either	https://blog.ploeh.dk/2018/06/11/church-encoded-either/
+A102	1	Church 编码的支付类型	Church-encoded payment types	https://blog.ploeh.dk/2018/06/18/church-encoded-payment-types/
+A103	1	Church 编码的玫瑰树	Church-encoded rose tree	https://blog.ploeh.dk/2019/07/29/church-encoded-rose-tree/
+A104	0	Catamorphism（结构归约）	Catamorphisms	https://blog.ploeh.dk/2019/04/29/catamorphisms/
+A105	1	布尔 Catamorphism	Boolean catamorphism	https://blog.ploeh.dk/2019/05/06/boolean-catamorphism/
+A106	1	Peano Catamorphism	Peano catamorphism	https://blog.ploeh.dk/2019/05/13/peano-catamorphism/
+A107	1	Maybe Catamorphism	Maybe catamorphism	https://blog.ploeh.dk/2019/05/20/maybe-catamorphism/
+A108	1	列表 Catamorphism	List catamorphism	https://blog.ploeh.dk/2019/05/27/list-catamorphism/
+A109	1	NonEmpty Catamorphism	NonEmpty catamorphism	https://blog.ploeh.dk/2023/08/07/nonempty-catamorphism/
+A110	1	Either Catamorphism	Either catamorphism	https://blog.ploeh.dk/2019/06/03/either-catamorphism/
+A111	1	树 Catamorphism	Tree catamorphism	https://blog.ploeh.dk/2019/06/10/tree-catamorphism/
+A112	1	玫瑰树 Catamorphism	Rose tree catamorphism	https://blog.ploeh.dk/2019/08/05/rose-tree-catamorphism/
+A113	1	满二叉树 Catamorphism	Full binary tree catamorphism	https://blog.ploeh.dk/2019/06/24/full-binary-tree-catamorphism/
+A114	1	支付类型 Catamorphism	Payment types catamorphism	https://blog.ploeh.dk/2019/07/08/payment-types-catamorphism/
+A115	0	把部分设计模式视作通用抽象	Some design patterns as universal abstractions	https://blog.ploeh.dk/2018/03/05/some-design-patterns-as-universal-abstractions/
+A116	1	Composite 的幺半群视角	Composite as a monoid	https://blog.ploeh.dk/2018/03/12/composite-as-a-monoid/
+A117	2	合并回退型 Composite	Coalescing Composite as a monoid	https://blog.ploeh.dk/2018/04/09/coalescing-composite-as-a-monoid/
+A118	2	自同态型 Composite	Endomorphic Composite as a monoid	https://blog.ploeh.dk/2018/04/16/endomorphic-composite-as-a-monoid/
+A119	1	Null Object 作为单位元	Null Object as identity	https://blog.ploeh.dk/2018/04/23/null-object-as-identity/
+A120	1	Builder 的幺半群视角	Builder as a monoid	https://blog.ploeh.dk/2020/02/17/builder-as-a-monoid/
+A121	1	Visitor 作为和类型	Visitor as a sum type	https://blog.ploeh.dk/2018/06/25/visitor-as-a-sum-type/
+A122	1	责任链作为 Catamorphism 组合	Chain of Responsibility as catamorphisms	https://blog.ploeh.dk/2019/07/22/chain-of-responsibility-as-catamorphisms/
+A123	1	State 模式与 State Monad	The State pattern and the State monad	https://blog.ploeh.dk/2022/09/05/the-state-pattern-and-the-state-monad/
+A124	2	把 TCP State 示例重构成纯函数	Refactoring the TCP State pattern example to pure functions	https://blog.ploeh.dk/2022/09/26/refactoring-the-tcp-state-pattern-example-to-pure-functions/
+A125	2	把 Saga 从 State 模式重构到 State Monad	Refactoring a saga from the State pattern to the State monad	https://blog.ploeh.dk/2022/10/10/refactoring-a-saga-from-the-state-pattern-to-the-state-monad/
+A126	1	Postel 法则的 Profunctor 视角	Postel's law as a profunctor	https://blog.ploeh.dk/2021/11/29/postels-law-as-a-profunctor/
+A127	1	里氏替换原则的 Profunctor 视角	The Liskov Substitution Principle as a profunctor	https://blog.ploeh.dk/2021/12/06/the-liskov-substitution-principle-as-a-profunctor/
+A128	1	向后兼容的 Profunctor 视角	Backwards compatibility as a profunctor	https://blog.ploeh.dk/2021/12/13/backwards-compatibility-as-a-profunctor/

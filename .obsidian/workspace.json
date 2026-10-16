@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "09f32a973c352177",
+    "type": "split",
+    "children": [
+      {
+        "id": "456f14ef8d913a56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff15764525b04169",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "第一章：基于基础模型构建AI应用入门"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b1971a0135f4df03",
+    "type": "split",
+    "children": [
+      {
+        "id": "d47d97c32af0c5df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "64ee11506f4b0790",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "adbb1b9202d6943a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "ac9f1da914b36a7a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 283.5
+  },
+  "right": {
+    "id": "5efe56b1d6df8479",
+    "type": "split",
+    "children": [
+      {
+        "id": "707333a73da47f2b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52d8ef6bf1b372c0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "第一章：基于基础模型构建AI应用入门 的反向链接列表"
+            }
+          },
+          {
+            "id": "b62e35cf26d7e16f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "第一章：基于基础模型构建AI应用入门 的出链列表"
+            }
+          },
+          {
+            "id": "e1fe3437d0076048",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "58e694952c19beab",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "2b7510e19b5088c8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "第一章：基于基础模型构建AI应用入门 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "ff15764525b04169",
+  "lastOpenFiles": [
+    "AI工程大模型应用开发实战/第三章：评估方法论/第三章：评估方法论.md",
+    "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md"
+  ]
+}

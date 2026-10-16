@@ -1,0 +1,452 @@
+/* Qiaomu Audio — neutral black/white/grey UI (no accent colour). Edge TTS interoperability notice: licenses/edge-tts-LGPL.txt. */
+.qaudio-bar,
+.qaudio-modal {
+  --qaudio-ink: var(--text-normal);
+  --qaudio-paper: var(--background-primary);
+  --qaudio-line: color-mix(in srgb, var(--qaudio-ink) 10%, transparent);
+  --qaudio-weak: color-mix(in srgb, var(--qaudio-ink) 6%, transparent);
+}
+.qaudio-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.qaudio-hidden.qaudio-hidden { display: none; }
+
+/* Floating bars at the bottom of the note */
+.qaudio-has-bar,
+.qaudio-has-dictation { position: relative; }
+.qaudio-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  z-index: 20;
+  max-width: calc(100% - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--qaudio-paper);
+  color: var(--text-normal);
+  font-size: var(--font-ui-small);
+  box-shadow: 0 0 0 1px var(--qaudio-line), 0 2px 6px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+.qaudio-has-bar .qaudio-dictation { bottom: calc(48px + var(--qaudio-player-height, 48px)); }
+.qaudio-bar-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px; min-width: 0; }
+.qaudio-bar-row > button { flex-shrink: 0; }
+.qaudio-bar-message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  max-width: 520px;
+  padding: 4px 8px 2px;
+  border-top: 1px solid var(--qaudio-line);
+  margin-top: 4px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+.qaudio-message-actions { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+
+button.qaudio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  cursor: pointer;
+}
+button.qaudio-button:hover { background: var(--qaudio-weak); color: var(--text-normal); }
+button.qaudio-button:focus-visible { outline: 2px solid var(--qaudio-ink); outline-offset: 1px; box-shadow: none; }
+button.qaudio-button:disabled { opacity: 0.4; cursor: default; }
+.qaudio-icon { display: inline-flex; }
+.qaudio-icon svg { width: 16px; height: 16px; }
+button.qaudio-primary {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 999px;
+  background: var(--qaudio-ink);
+  color: var(--qaudio-paper);
+}
+button.qaudio-primary:hover,
+button.qaudio-primary-text:hover { background: var(--qaudio-ink); color: var(--qaudio-paper); opacity: 0.86; }
+button.qaudio-primary-text { background: var(--qaudio-ink); color: var(--qaudio-paper); padding: 0 12px; }
+.qaudio-message-actions button.qaudio-button,
+.qaudio-actions button.qaudio-button:not(button.qaudio-primary-text) { height: 28px; box-shadow: 0 0 0 1px var(--qaudio-line); }
+button.qaudio-primary.is-loading .qaudio-icon { animation: qaudio-pulse 1s ease-in-out infinite; }
+.qaudio-voice .qaudio-button-text { max-width: 9em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+button.qaudio-speed { min-width: 40px; font-variant-numeric: tabular-nums; }
+button.qaudio-follow { color: var(--text-normal); }
+
+/* The player keeps identical geometry while loading/playing/paused/ended.
+   Only an actionable error or first-use disclosure adds a message row. */
+.qaudio-player { width: 456px; box-sizing: border-box; gap: 6px; padding: 10px; }
+.qaudio-player .qaudio-bar-row { display: grid; grid-template-columns: minmax(64px, 1fr) repeat(8, 36px); gap: 4px; }
+.qaudio-player button.qaudio-button { width: 100%; min-width: 0; height: 36px; padding: 0; }
+.qaudio-player button.qaudio-voice { justify-content: flex-start; padding: 0 4px; overflow: hidden; }
+.qaudio-player .qaudio-voice .qaudio-button-text { min-width: 0; }
+.qaudio-player button.qaudio-speed { font-size: 12px; }
+.qaudio-player button.qaudio-follow[aria-pressed="true"] { background: var(--qaudio-weak); }
+.qaudio-player button.qaudio-button:active { opacity: 0.7; }
+.qaudio-player-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 4px; height: 22px; font-size: 11px; line-height: 22px; color: var(--text-muted); }
+.qaudio-player-state { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.qaudio-player-position { flex: none; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qaudio-player-seek { display: flex; align-items: center; height: 16px; padding: 0 4px; }
+.qaudio-player-seek input[type="range"] { appearance: none; width: 100%; height: 4px; margin: 0; padding: 0; background: var(--qaudio-line); border: 0; border-radius: 2px; box-shadow: none; accent-color: var(--qaudio-ink); }
+.qaudio-player-seek input[type="range"]::-webkit-slider-thumb { appearance: none; width: 10px; height: 10px; border-radius: 50%; background: var(--qaudio-ink); box-shadow: none; }
+.qaudio-player-seek input[type="range"]:focus-visible { outline: 1px solid var(--qaudio-ink); outline-offset: 5px; }
+.qaudio-player.is-narrow { width: 320px; }
+.qaudio-player.is-narrow .qaudio-bar-row { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.qaudio-player.is-narrow button.qaudio-button { height: 44px; }
+.qaudio-player.is-narrow .qaudio-voice { grid-column: 1 / 3; grid-row: 1; }
+.qaudio-player.is-narrow .qaudio-speed { grid-column: 3; grid-row: 1; }
+.qaudio-player.is-narrow .qaudio-more { grid-column: 4; grid-row: 1; }
+.qaudio-player.is-narrow .qaudio-close { grid-column: 5; grid-row: 1; }
+.qaudio-player.is-narrow .qaudio-previous { grid-column: 1; grid-row: 2; }
+.qaudio-player.is-narrow .qaudio-play { grid-column: 2; grid-row: 2; width: 44px; justify-self: center; }
+.qaudio-player.is-narrow .qaudio-next { grid-column: 3; grid-row: 2; }
+.qaudio-player.is-narrow .qaudio-cursor { grid-column: 4; grid-row: 2; }
+.qaudio-player.is-narrow .qaudio-follow { grid-column: 5; grid-row: 2; }
+
+/* Dictation */
+.qaudio-rec-dot { width: 8px; height: 8px; margin: 0 6px 0 8px; border-radius: 50%; background: var(--color-red); flex: none; }
+.qaudio-dictation.is-listening .qaudio-rec-dot { animation: qaudio-pulse 1.2s ease-in-out infinite; }
+.qaudio-timer { min-width: 3.2em; font-family: var(--font-monospace); font-variant-numeric: tabular-nums; color: var(--text-normal); }
+.qaudio-meter { display: flex; align-items: center; gap: 2px; height: 18px; margin: 0 8px; }
+.qaudio-meter span {
+  width: 3px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--qaudio-ink);
+  transform: scaleY(var(--qaudio-level, 0.12));
+  transition: transform 80ms linear;
+}
+.qaudio-dictation:not(.is-listening) .qaudio-meter { opacity: 0.3; }
+.qaudio-dictation-status { min-width: 5em; margin-right: 6px; color: var(--text-muted); white-space: nowrap; }
+
+@keyframes qaudio-pulse { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+  button.qaudio-primary.is-loading .qaudio-icon,
+  .qaudio-dictation.is-listening .qaudio-rec-dot { animation: none; }
+  .qaudio-meter span { transition: none; }
+}
+
+/* The sentence being read */
+.qaudio-speaking {
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--text-normal) 9%, transparent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text-normal) 35%, transparent);
+  text-underline-offset: 3px;
+}
+
+/* Status bar */
+.qaudio-status { cursor: pointer; }
+.qaudio-recording-status { color: var(--color-red); }
+
+/* Settings and first-use chooser */
+.qaudio-setting-note { padding: 0 0 12px; color: var(--text-muted); font-size: var(--font-ui-small); line-height: 1.5; }
+.qaudio-local-panel { display: flex; flex-direction: column; gap: 8px; padding: 4px 0 12px; }
+.qaudio-local-panel progress { width: 100%; height: 6px; accent-color: var(--qaudio-ink, var(--text-normal)); }
+.qaudio-feedback { color: var(--text-muted); font-size: var(--font-ui-small); }
+.qaudio-feedback.is-ready { color: var(--text-success); }
+.qaudio-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.qaudio-muted { color: var(--text-muted); font-size: var(--font-ui-small); }
+.qaudio-details { padding: 4px 0; }
+.qaudio-details > summary { padding: 8px 0; color: var(--text-muted); cursor: pointer; }
+.qaudio-choose a { color: var(--text-muted); text-decoration-color: var(--qaudio-line); }
+.qaudio-choose a:hover { color: var(--text-normal); }
+.qaudio-option { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; margin-bottom: 12px; border-radius: 10px; box-shadow: 0 0 0 1px var(--qaudio-line); }
+.qaudio-option-title { font-weight: 600; letter-spacing: -0.01em; }
+
+/* Touch and narrow screens */
+.is-mobile .qaudio-bar { bottom: calc(64px + var(--safe-area-inset-bottom, 0px)); }
+.is-mobile .qaudio-has-bar .qaudio-dictation { bottom: calc(76px + var(--qaudio-player-height, 48px) + var(--safe-area-inset-bottom, 0px)); }
+.is-mobile button.qaudio-button { min-width: 40px; height: 40px; }
+.is-mobile button.qaudio-primary { width: 44px; height: 44px; }
+@media (max-width: 480px) {
+  .qaudio-dictation .qaudio-voice .qaudio-button-text { display: none; }
+  .qaudio-meter { display: none; }
+}
+
+/* Settings — header, underline tabs, carded groups and About. Shares 乔木 Agent's neutral Geist-like palette. */
+/* Obsidian 1.13+ wraps a setting definition in a tinted group; the page draws its own cards instead. */
+.setting-items.qaudio-settings-group { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.setting-items > .setting-item.qaudio-settings-definition { display: block; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.qaudio-settings {
+  --qaudio-ink: #171717;
+  --qaudio-muted: #666;
+  --qaudio-line: #e5e5e5;
+  --qaudio-surface: #fff;
+  --qaudio-soft: #fafafa;
+  --qaudio-weak: color-mix(in srgb, var(--qaudio-ink) 5%, transparent);
+  --qaudio-paper: var(--qaudio-surface);
+  container-type: inline-size;
+  color: var(--qaudio-ink);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.theme-dark .qaudio-settings {
+  --qaudio-ink: #ededed;
+  --qaudio-muted: #a1a1a1;
+  --qaudio-line: #333;
+  --qaudio-surface: #1a1a1a;
+  --qaudio-soft: #1f1f1f;
+}
+.qaudio-settings .qaudio-icon { display: inline-flex; align-items: center; justify-content: center; }
+
+/* Header */
+.qaudio-settings .qaudio-settings-header { margin: 0; padding-top: 6px; }
+.qaudio-settings-identity { display: flex; align-items: center; gap: 10px; min-height: 28px; margin-bottom: 18px; }
+.qaudio-settings-mark { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 28px; height: 28px; border-radius: 8px; background: var(--qaudio-ink); color: var(--qaudio-surface); }
+.qaudio-settings-mark svg { width: 16px; height: 16px; stroke-width: 2; }
+.qaudio-settings .qaudio-settings-identity .setting-item { flex: 0 1 auto; min-width: 0; margin: 0; padding: 0; border: 0; }
+.qaudio-settings-identity .setting-item-info { margin: 0; }
+.qaudio-settings-identity .setting-item-name { font-size: 19px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--qaudio-ink); }
+.qaudio-tabs { display: flex; gap: 22px; border-bottom: 1px solid var(--qaudio-line); }
+.qaudio-settings button.qaudio-tab {
+  display: inline-flex; align-items: center; gap: 6px; height: auto; min-height: 38px; margin-bottom: -1px; padding: 0 2px 8px;
+  border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; box-shadow: none;
+  color: var(--qaudio-muted); font-size: 13px; font-weight: 500; cursor: pointer;
+}
+.qaudio-settings button.qaudio-tab svg { width: 15px; height: 15px; }
+.qaudio-settings button.qaudio-tab:hover { color: var(--qaudio-ink); background: transparent; }
+.qaudio-settings button.qaudio-tab.is-active { border-bottom-color: var(--qaudio-ink); color: var(--qaudio-ink); font-weight: 600; }
+.qaudio-settings button.qaudio-tab:focus-visible { outline: 1px solid var(--qaudio-muted); outline-offset: 3px; box-shadow: none; }
+.qaudio-settings-body { display: flex; flex-direction: column; gap: 26px; margin-top: 24px; padding-bottom: 12px; }
+.qaudio-settings a { color: var(--qaudio-muted); text-underline-offset: 3px; }
+.qaudio-settings a:hover { color: var(--qaudio-ink); }
+.qaudio-settings .setting-item-description { overflow-wrap: anywhere; }
+.qaudio-settings input::placeholder { color: var(--qaudio-muted); }
+.qaudio-settings input:focus::placeholder { opacity: 0; }
+.qaudio-settings input { caret-color: var(--qaudio-ink); }
+
+/* Groups */
+.qaudio-section { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.qaudio-settings .setting-item.qaudio-section-head { margin: 0; padding: 0; border: 0; }
+.qaudio-section-head .setting-item-info { margin: 0; }
+.qaudio-section-head .setting-item-name { color: var(--qaudio-ink); font-size: 15px; font-weight: 600; line-height: 22px; letter-spacing: -0.01em; }
+.qaudio-section-head .setting-item-description { margin-top: 3px; padding: 0; color: var(--qaudio-muted); font-size: 13px; line-height: 1.55; }
+.qaudio-section-head .setting-item-control { display: none; }
+.qaudio-card { display: flex; flex-direction: column; border-radius: 12px; background: var(--qaudio-surface); box-shadow: 0 0 0 1px var(--qaudio-line), 0 1px 2px rgba(0, 0, 0, 0.03); overflow: hidden; }
+.qaudio-card > * + * { border-top: 1px solid var(--qaudio-line); }
+.qaudio-settings .qaudio-card > .setting-item { padding: 14px 16px; border-top: 1px solid var(--qaudio-line); }
+.qaudio-settings .qaudio-card > .setting-item:first-child { border-top: 0; }
+.qaudio-settings .qaudio-card .setting-item-name { font-size: 14px; line-height: 21px; color: var(--qaudio-ink); }
+.qaudio-settings .qaudio-card .setting-item-description { margin-top: 2px; color: var(--qaudio-muted); font-size: 13px; line-height: 1.55; }
+.qaudio-settings .qaudio-card .setting-item-control { gap: 8px; min-width: 0; }
+.qaudio-settings .qaudio-card .setting-item-info { min-width: 0; }
+.qaudio-settings .qaudio-card .setting-item-control { flex-wrap: wrap; }
+.qaudio-settings .qaudio-card .setting-item-control :is(input, select) { min-width: 0; max-width: 100%; }
+.qaudio-settings .qaudio-card select { max-width: min(300px, 100%); }
+.qaudio-settings .qaudio-setting-note { padding: 12px 16px; background: var(--qaudio-soft); color: var(--qaudio-muted); font-size: 13px; line-height: 1.55; }
+.qaudio-settings .qaudio-local-panel { padding: 14px 16px; }
+.qaudio-settings .qaudio-local-panel .qaudio-details { padding: 0; }
+.qaudio-settings .qaudio-local-panel .qaudio-details > summary { padding: 2px 0; font-size: 13px; }
+.qaudio-settings .qaudio-local-panel .qaudio-details p { margin: 6px 0; color: var(--qaudio-muted); font-size: 13px; }
+.qaudio-status-line { display: block; min-height: 0; margin-top: 2px; font-size: 12px; }
+.qaudio-status-line:empty { display: none; }
+.qaudio-settings .is-ready { color: var(--text-success); }
+.qaudio-settings .is-error { color: var(--text-error); }
+
+/* Advanced disclosure: a quiet chevron row, then its own card */
+.qaudio-settings .qaudio-details { margin-top: -14px; padding: 0; }
+.qaudio-settings .qaudio-details > summary { display: inline-flex; align-items: center; gap: 4px; padding: 6px 2px; list-style: none; color: var(--qaudio-muted); font-size: 13px; cursor: pointer; }
+.qaudio-settings .qaudio-details > summary::-webkit-details-marker { display: none; }
+.qaudio-settings .qaudio-details > summary:hover { color: var(--qaudio-ink); }
+.qaudio-settings .qaudio-details > summary:focus-visible { outline: 1px solid var(--qaudio-muted); outline-offset: 2px; border-radius: 4px; }
+.qaudio-chevron svg { width: 14px; height: 14px; transition: transform 120ms ease; }
+.qaudio-details[open] > summary .qaudio-chevron svg { transform: rotate(90deg); }
+.qaudio-details[open] > .qaudio-card { margin-top: 8px; }
+
+/* Controls: neutral ink, never the host accent */
+.qaudio-settings .setting-item-control button:not(.mod-warning) { background: transparent; box-shadow: 0 0 0 1px var(--qaudio-line); color: var(--qaudio-ink); }
+.qaudio-settings .setting-item-control button:not(.mod-warning):hover { background: var(--qaudio-weak); }
+.qaudio-settings .setting-item-control button.mod-cta { background: var(--qaudio-ink); box-shadow: none; color: var(--qaudio-surface); }
+.qaudio-settings .setting-item-control button.mod-cta:hover { background: var(--qaudio-ink); opacity: 0.86; }
+.qaudio-settings :is(button, select, a):focus-visible { outline: 2px solid var(--qaudio-ink); outline-offset: 2px; box-shadow: none; }
+.qaudio-settings input:not([type="checkbox"]):focus,
+.qaudio-settings select:focus { border-color: var(--qaudio-muted); box-shadow: none; }
+.qaudio-settings .checkbox-container.is-enabled { background-color: var(--qaudio-ink); }
+.qaudio-settings .checkbox-container.is-enabled::after { background-color: var(--qaudio-surface); }
+.qaudio-settings .checkbox-container:focus-visible { outline: 1px solid var(--qaudio-muted); outline-offset: 3px; }
+.qaudio-settings progress { accent-color: var(--qaudio-ink); }
+
+/* About */
+.qaudio-about-hero {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px 18px; padding: 22px;
+  border-radius: 14px; background: radial-gradient(120% 140% at 0% 0%, var(--qaudio-soft), var(--qaudio-surface) 60%);
+  box-shadow: 0 0 0 1px var(--qaudio-line), 0 2px 6px rgba(0, 0, 0, 0.03), 0 12px 32px rgba(0, 0, 0, 0.04);
+}
+.qaudio-about-logo { display: flex; align-items: center; justify-content: center; gap: 3px; width: 52px; height: 52px; border-radius: 14px; background: var(--qaudio-ink); }
+.qaudio-about-logo span { width: 4px; border-radius: 2px; background: var(--qaudio-surface); }
+.qaudio-about-logo span:nth-child(1), .qaudio-about-logo span:nth-child(5) { height: 10px; opacity: 0.55; }
+.qaudio-about-logo span:nth-child(2), .qaudio-about-logo span:nth-child(4) { height: 20px; opacity: 0.8; }
+.qaudio-about-logo span:nth-child(3) { height: 28px; }
+.qaudio-about-hero:hover .qaudio-about-logo span { animation: qaudio-wave 0.9s ease-in-out infinite; }
+.qaudio-about-logo span:nth-child(2) { animation-delay: -0.15s; }
+.qaudio-about-logo span:nth-child(3) { animation-delay: -0.3s; }
+.qaudio-about-logo span:nth-child(4) { animation-delay: -0.45s; }
+.qaudio-about-logo span:nth-child(5) { animation-delay: -0.6s; }
+@keyframes qaudio-wave { 50% { transform: scaleY(0.45); } }
+.qaudio-about-name { font-size: 20px; font-weight: 650; line-height: 1.25; letter-spacing: -0.02em; }
+.qaudio-about-tagline { margin-top: 3px; color: var(--qaudio-muted); font-size: 13px; }
+.qaudio-about-release { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.qaudio-about-label { color: var(--qaudio-muted); font-size: 11px; letter-spacing: 0.02em; }
+.qaudio-about-version { font-family: var(--font-monospace); font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.qaudio-about-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 16px; border-top: 1px solid var(--qaudio-line); }
+.qaudio-settings a.qaudio-about-action {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 12px; border-radius: 8px;
+  background: var(--qaudio-surface); box-shadow: 0 0 0 1px var(--qaudio-line); color: var(--qaudio-ink); font-size: 12.5px; text-decoration: none; white-space: nowrap;
+}
+.qaudio-settings a.qaudio-about-action:hover { background: var(--qaudio-soft); color: var(--qaudio-ink); box-shadow: 0 0 0 1px color-mix(in srgb, var(--qaudio-ink) 22%, transparent); }
+.qaudio-about-action .qaudio-icon { color: var(--qaudio-muted); }
+.qaudio-about-action svg { width: 14px; height: 14px; }
+.qaudio-about-support { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.qaudio-about-qr { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0; padding: 22px 16px 18px; border-radius: 14px; background: var(--qaudio-soft); box-shadow: 0 0 0 1px var(--qaudio-line); text-align: center; transition: transform 160ms ease, box-shadow 160ms ease; }
+.qaudio-about-qr:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px var(--qaudio-line), 0 10px 24px rgba(0, 0, 0, 0.06); }
+.qaudio-about-qr-image { padding: 8px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px var(--qaudio-line); }
+.qaudio-about-qr-image img { display: block; width: 148px; height: 148px; object-fit: contain; }
+.qaudio-about-qr figcaption { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.qaudio-about-qr-title { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; }
+.qaudio-about-qr-title .qaudio-icon { color: var(--qaudio-muted); }
+.qaudio-about-qr-title svg { width: 15px; height: 15px; }
+.qaudio-about-qr-hint { color: var(--qaudio-muted); font-size: 12px; }
+.qaudio-about-footer { display: flex; flex-direction: column; gap: 6px; padding: 2px 2px 0; color: var(--qaudio-muted); font-size: 12px; line-height: 1.6; }
+.qaudio-about-footer p { margin: 0; }
+.qaudio-about-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 4px; }
+.qaudio-settings .qaudio-about-links a { color: var(--qaudio-muted); text-decoration: underline; text-decoration-color: var(--qaudio-line); text-underline-offset: 3px; }
+.qaudio-settings .qaudio-about-links a:hover { color: var(--qaudio-ink); text-decoration-color: currentColor; }
+
+@media (prefers-reduced-motion: reduce) {
+  .qaudio-about-hero:hover .qaudio-about-logo span { animation: none; }
+  .qaudio-about-qr, .qaudio-chevron svg { transition: none; }
+  .qaudio-about-qr:hover { transform: none; }
+}
+@container (max-width: 520px) {
+  .qaudio-tabs { gap: 18px; }
+  .qaudio-settings .qaudio-card > .setting-item { flex-wrap: wrap; gap: 10px; }
+  .qaudio-settings .qaudio-card .setting-item-control { flex: 1 1 100%; justify-content: flex-end; flex-wrap: wrap; }
+  .qaudio-settings .qaudio-card select { max-width: 100%; }
+  .qaudio-about-hero { grid-template-columns: auto minmax(0, 1fr); padding: 18px; }
+  .qaudio-about-release { grid-column: 1 / -1; flex-direction: row; align-items: baseline; gap: 8px; }
+  .qaudio-about-support { grid-template-columns: 1fr; }
+}
+@media (pointer: coarse) {
+  .qaudio-settings button.qaudio-tab, .qaudio-settings a.qaudio-about-action { min-height: 44px; }
+}
+/* Shared voice picker, scoped identically in the two independent bundles. */
+.qaudio-modal { container-type: inline-size; max-width: 100%; box-sizing: border-box; }
+.qaudio-modal .setting-item { gap: 12px; padding: 12px 0; margin: 0; }
+.qaudio-modal .setting-item-info { min-width: 0; }
+.qaudio-modal .setting-item-control { min-width: 0; gap: 8px; flex-wrap: wrap; }
+.qaudio-modal .setting-item-control :is(input, select) { min-width: 0; max-width: 100%; }
+.qaudio-modal :is(button, select, input, summary, a):focus-visible { outline: 2px solid var(--qaudio-ink); outline-offset: 2px; box-shadow: none; }
+.qaudio-modal input:focus { border-color: var(--text-muted); box-shadow: none; }
+.qaudio-modal button.mod-cta { background: var(--qaudio-ink); color: var(--qaudio-paper); }
+.qaudio-modal button.mod-cta:hover { background: var(--qaudio-ink); opacity: 0.86; }
+.qaudio-modal .setting-item-control button:not(.mod-cta, .mod-warning) { background: transparent; color: var(--qaudio-ink); box-shadow: 0 0 0 1px var(--qaudio-line); }
+.qaudio-modal .setting-item-control button:not(.mod-cta, .mod-warning):hover { background: var(--qaudio-weak); }
+.qaudio-modal .qaudio-setting-note { margin: 0; padding: 0 0 12px; }
+.qaudio-modal .qaudio-details { padding: 8px 0; }
+.qaudio-modal .qaudio-advanced > summary { display: flex; align-items: center; gap: 4px; list-style: none; }
+.qaudio-modal .qaudio-advanced > summary::-webkit-details-marker { display: none; }
+.qaudio-modal .qaudio-details > .qaudio-card { padding: 0 16px; }
+.qaudio-modal .qaudio-status-line { margin: 12px 0; overflow-wrap: anywhere; }
+.qaudio-modal .qaudio-status-line:empty { display: none; }
+.qaudio-modal .qaudio-modal-footer { justify-content: flex-end; margin-top: 16px; padding-top: 16px; }
+.qaudio-modal-footer .setting-item-info:empty { display: none; }
+.qaudio-voice-picker { display: flex; flex-direction: column; gap: 16px; max-width: 560px; }
+.qaudio-voice-picker .setting-item { padding: 0; border: 0; }
+.qaudio-voice-models { display: flex; flex-direction: column; gap: 12px; }
+.qaudio-voice-models:empty { display: none; }
+.qaudio-voice-recent:empty { display: none; }
+.qaudio-voice-recent { display: flex; flex-direction: column; gap: 4px; max-height: 164px; overflow-y: auto; overscroll-behavior: contain; }
+.qaudio-recent-heading { display: flex; align-items: center; justify-content: space-between; color: var(--text-muted); font-size: 12px; }
+.qaudio-voice-recent .qaudio-button-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.qaudio-voice-recent .qaudio-voice-row > .qaudio-button { flex: 1; justify-content: flex-start; }
+.qaudio-voice-picker .qaudio-recent-heading button.qaudio-button { min-height: 28px; padding: 4px; }
+.qaudio-voice-search { display: block; }
+.qaudio-voice-picker input[type=search] { width: 100%; margin: 0; }
+.qaudio-voice-list { max-height: 50vh; overflow-y: auto; overscroll-behavior: contain; }
+.qaudio-voice-row { display: flex; align-items: center; gap: 6px; border-radius: 6px; padding: 2px; }
+.qaudio-voice-row .qaudio-button:first-child { flex: 1; justify-content: flex-start; text-align: left; min-width: 0; }
+.qaudio-voice-row .qaudio-button-text { white-space: normal; }
+.qaudio-choices .setting-item-control { flex-wrap: wrap; }
+.qaudio-voice-picker .qaudio-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: auto; min-height: 36px; padding: 8px; border: 0; box-shadow: none; background: transparent; color: var(--text-normal); }
+.qaudio-voice-row > .qaudio-button:last-child { flex: none; align-self: center; }
+.qaudio-voice-picker .qaudio-button:hover { background: var(--background-modifier-hover); }
+.qaudio-voice-picker .qaudio-button:focus-visible { outline: 2px solid var(--qaudio-ink); outline-offset: 2px; }
+.qaudio-voice-picker .qaudio-icon svg { width: 17px; height: 17px; }
+.qaudio-voice-picker .qaudio-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@container (max-width: 420px) {
+  .qaudio-modal .setting-item { flex-wrap: wrap; }
+  .qaudio-modal .setting-item-control { flex: 1 1 100%; justify-content: flex-end; }
+  .qaudio-modal .setting-item-control :is(input, select) { max-width: 100%; }
+}
+@media (pointer: coarse) {
+  .qaudio-modal :is(button, input, select), .qaudio-voice-row .qaudio-button { min-height: 44px; }
+}
+
+/* Share: export as audio or video */
+.qaudio-share { --interactive-accent: var(--qaudio-ink); --interactive-accent-hover: var(--qaudio-ink); --slider-track-background: var(--qaudio-line); --slider-fill-background: var(--qaudio-ink); --slider-thumb-shadow-focus: none; --checkbox-color: var(--qaudio-ink); --checkbox-color-hover: var(--qaudio-ink); }
+.qaudio-share .checkbox-container.is-enabled { background-color: var(--qaudio-ink); }
+.qaudio-share .checkbox-container.is-enabled::after { background-color: var(--qaudio-paper); }
+.qaudio-share input[type="range"] { accent-color: var(--qaudio-ink); }
+.qaudio-share :is(button, select, input, summary, a, .checkbox-container):focus-visible { outline: 1px solid var(--qaudio-ink); outline-offset: 2px; box-shadow: none; }
+.qaudio-share progress { accent-color: var(--qaudio-ink); }
+.qaudio-share-modal { width: min(560px, 94vw); max-height: 90vh; display: flex; flex-direction: column; }
+.qaudio-share-modal .modal-content.qaudio-share { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.qaudio-modal .qaudio-hidden.qaudio-hidden { display: none; }
+.qaudio-share .qaudio-share-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; }
+.qaudio-share .setting-item { padding: 8px 0; }
+.qaudio-share .qaudio-share-body.is-busy { opacity: 0.5; pointer-events: none; }
+.qaudio-share .qaudio-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.qaudio-share .qaudio-share-row { margin-bottom: 4px; }
+.qaudio-modal.qaudio-share .qaudio-chips button.qaudio-chip { height: auto; min-height: 30px; padding: 4px 12px; border-radius: 999px; background: transparent; box-shadow: none; border: 1px solid var(--qaudio-line); color: var(--text-muted); cursor: pointer; }
+.qaudio-modal.qaudio-share .qaudio-chips button.qaudio-chip:hover { background: var(--qaudio-weak); color: var(--text-normal); }
+.qaudio-modal.qaudio-share .qaudio-chips button.qaudio-chip[aria-pressed="true"] { background: var(--qaudio-ink); color: var(--qaudio-paper); border-color: var(--qaudio-ink); }
+.qaudio-modal.qaudio-share .qaudio-chips button.qaudio-chip:disabled { opacity: 0.4; cursor: default; }
+.qaudio-share .qaudio-share-stats { color: var(--text-muted); font-size: var(--font-ui-small); padding-bottom: 8px; }
+.qaudio-share .qaudio-share-warn { margin-top: 4px; color: var(--text-warning, var(--text-muted)); }
+.qaudio-share .qaudio-share-hint { margin: 6px 0 0; color: var(--text-muted); font-size: var(--font-ui-smaller); }
+.qaudio-share .qaudio-share-hint:empty { display: none; }
+.qaudio-share .qaudio-share-sections { display: flex; flex-direction: column; gap: 4px; max-height: 180px; overflow-y: auto; margin-bottom: 8px; padding: 6px 8px; border: 1px solid var(--qaudio-line); border-radius: 8px; }
+.qaudio-share .qaudio-share-section { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.qaudio-share .qaudio-share-textarea { width: 100%; margin-top: 8px; resize: vertical; font-size: var(--font-ui-small); line-height: 1.5; }
+.qaudio-share .qaudio-share-value { min-width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; color: var(--text-muted); }
+.qaudio-share .qaudio-share-previews { display: flex; gap: 10px; margin-top: 8px; align-items: flex-start; }
+.qaudio-share .qaudio-share-frame { flex: 0 0 auto; width: 92px; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px var(--qaudio-line); }
+.qaudio-share .qaudio-share-previews.is-landscape .qaudio-share-frame { width: 168px; }
+.qaudio-share .qaudio-share-frame canvas { display: block; width: 100%; height: auto; }
+.qaudio-share .qaudio-share-footer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--qaudio-line); display: flex; flex-direction: column; gap: 10px; }
+.qaudio-share .qaudio-share-buttons { display: flex; justify-content: flex-end; gap: 8px; }
+.qaudio-share .qaudio-share-progress { display: flex; align-items: center; gap: 12px; color: var(--text-muted); font-size: var(--font-ui-small); }
+.qaudio-share .qaudio-share-progress progress { flex: 1; height: 6px; }
+.qaudio-share .qaudio-share-error { color: var(--text-error); font-size: var(--font-ui-small); }
+.qaudio-share .qaudio-share-results { display: flex; flex-direction: column; gap: 4px; }
+.qaudio-share .qaudio-share-result { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--qaudio-line); }
+.qaudio-share .qaudio-share-file { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.qaudio-share .qaudio-share-size { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.qaudio-share .qaudio-share-reveal { height: auto; min-height: 30px; padding: 4px 10px; }
+@container (max-width: 420px) {
+  .qaudio-share .qaudio-share-frame { width: 72px; }
+  .qaudio-share .qaudio-share-previews.is-landscape .qaudio-share-frame { width: 120px; }
+}
