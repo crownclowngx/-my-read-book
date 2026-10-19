@@ -5,6 +5,10 @@
       "edge": {
         "voice": "zh-CN-YunxiNeural",
         "model": ""
+      },
+      "localModel": {
+        "voice": "zf_001",
+        "model": "kokoro"
       }
     },
     "rate": 1,
@@ -44,9 +48,9 @@
     },
     "AI工程大模型应用开发实战/第一章：基于基础模型构建AI应用入门/第一章：基于基础模型构建AI应用入门.md": {
       "fingerprint": "39002-8x4mbz-x17c8d",
-      "offset": 19746,
+      "offset": 28437,
       "ended": false,
-      "at": 1792113571864
+      "at": 1792116730526
     }
   },
   "asr": {

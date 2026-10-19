@@ -1,0 +1,17 @@
+[
+  {
+    "file": "01-提示词简介.md",
+    "chinese_characters": 2076,
+    "images": 2
+  },
+  {
+    "file": "02-提示工程最佳实践.md",
+    "chinese_characters": 2328,
+    "images": 2
+  },
+  {
+    "file": "03-防御性提示工程.md",
+    "chinese_characters": 2417,
+    "images": 2
+  }
+]
