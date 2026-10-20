@@ -1,0 +1,20 @@
+[
+  {
+    "file": "01-数据策展.md",
+    "chinese_characters": 2769,
+    "images": 2,
+    "fences_balanced": true
+  },
+  {
+    "file": "02-数据增强与合成.md",
+    "chinese_characters": 3346,
+    "images": 2,
+    "fences_balanced": true
+  },
+  {
+    "file": "03-数据处理.md",
+    "chinese_characters": 2741,
+    "images": 1,
+    "fences_balanced": true
+  }
+]
