@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "articles": 3,
+  "images": 8,
+  "all_readback": true,
+  "all_unpublished": true,
+  "upload_versions_match": true,
+  "formula_examples_checked": true,
+  "online_images": "CDN connection timed out; local images intact"
+}

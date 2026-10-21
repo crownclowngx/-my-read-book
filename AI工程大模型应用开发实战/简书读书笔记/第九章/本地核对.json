@@ -1,0 +1,23 @@
+[
+  {
+    "file": "01-理解推理优化.md",
+    "chinese_characters": 2829,
+    "images": 2,
+    "fences": 2,
+    "result": "PASS"
+  },
+  {
+    "file": "02-模型优化.md",
+    "chinese_characters": 3017,
+    "images": 3,
+    "fences": 2,
+    "result": "PASS"
+  },
+  {
+    "file": "03-推理服务优化.md",
+    "chinese_characters": 3004,
+    "images": 3,
+    "fences": 0,
+    "result": "PASS"
+  }
+]
