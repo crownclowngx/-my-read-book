@@ -1,0 +1,16 @@
+[
+  {
+    "file": "01-AI工程架构.md",
+    "chinese_characters": 3793,
+    "images": 2,
+    "fences": 0,
+    "result": "PASS"
+  },
+  {
+    "file": "02-用户反馈.md",
+    "chinese_characters": 3517,
+    "images": 3,
+    "fences": 0,
+    "result": "PASS"
+  }
+]
