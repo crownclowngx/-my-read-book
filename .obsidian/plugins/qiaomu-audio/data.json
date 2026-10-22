@@ -18,6 +18,11 @@
         "id": "edge",
         "voice": "zh-CN-YunxiNeural",
         "model": ""
+      },
+      {
+        "id": "edge",
+        "voice": "zh-CN-XiaoyiNeural",
+        "model": ""
       }
     ]
   },
@@ -51,6 +56,12 @@
       "offset": 28437,
       "ended": false,
       "at": 1792116730526
+    },
+    "基层中国的运行逻辑/第一章“条块结合”是中国国家治理的根本特征/第一章“条块结合”是中国国家治理的根本特征.md": {
+      "fingerprint": "43106-1nvtnea-pu0l5k",
+      "offset": 10066,
+      "ended": false,
+      "at": 1792712618357
     }
   },
   "asr": {

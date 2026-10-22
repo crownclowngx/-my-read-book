@@ -1,0 +1,10 @@
+{
+  "file": "01-从条块结合到上下同治.md",
+  "chinese_characters": 6999,
+  "images": 4,
+  "sections": 4,
+  "table_count": 1,
+  "formula": "K₂＜K₁＜K₃＜K₁＋K₂",
+  "source_sha256": "fb816e76cd1c4647436670870952d79edecc0b14bdc72058507466a1b44f6e78",
+  "result": "PASS"
+}
