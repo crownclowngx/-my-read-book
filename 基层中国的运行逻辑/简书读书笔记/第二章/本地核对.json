@@ -1,0 +1,20 @@
+{
+  "file": "01-等级制是行政资源分配的主要方式.md",
+  "chinese_characters": 6325,
+  "images": 4,
+  "sections": 4,
+  "table_count": 1,
+  "source_sha256": "bb4e5a94fe888a82bebebce52f935ad7567d3d4971bfaabf684f9db9f6040647",
+  "result": "PASS",
+  "remote_verification": {
+    "reloaded": true,
+    "bodyExactMatch": true,
+    "titleExactMatch": true,
+    "saved": true,
+    "publishActionAvailable": true,
+    "publishedMarkerAbsent": true,
+    "imagesInBody": 4
+  },
+  "remote_body_sha256": "eb626cb2cd979e45069a0c7462701e435f9ae3db4ab7747875eb9f8ddf7de6f3",
+  "local_links_missing": []
+}
