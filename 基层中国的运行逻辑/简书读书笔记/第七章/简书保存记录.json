@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-27",
+  "notebook": "基层中国的运行逻辑",
+  "title": "《基层中国的运行逻辑》第七章：基层治理的困境",
+  "url": "https://www.jianshu.com/writer#/notebooks/57350152/notes/145518285",
+  "published": false,
+  "saveLabel": "已保存",
+  "publishControl": "发布文章",
+  "refresh_title_equal": true,
+  "refresh_body_equal": true,
+  "body_sha256": "bb20823a8258b352346802ec436ccd6968ec9a9190dc8346dd671423e08acd1c",
+  "editor_characters": 11216,
+  "chinese_characters": 8228,
+  "jianshu_display_count": 9076,
+  "images": [
+    {
+      "local": "img/01-政企关系的四种类型.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-ce70192ecbc9cf2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    },
+    {
+      "local": "img/02-土地财政与地方建设.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-c1ce1129abcf8581.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    },
+    {
+      "local": "img/03-地方债的成因与治理.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-bbb3edde1f1e7dc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    },
+    {
+      "local": "img/04-县域电商的经营与就业.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-5fb5b1bfd8852dac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    }
+  ],
+  "sections": 4,
+  "subsections": 12,
+  "subheadings": 5,
+  "online_image_preview": {
+    "loaded": 0,
+    "total": 4,
+    "direct_navigation_error": "net::ERR_CERT_COMMON_NAME_INVALID",
+    "certificate_bypassed": false
+  },
+  "local_checks": {
+    "images": [
+      {
+        "alt": "政企关系的四种类型",
+        "complete": true,
+        "height": 1570,
+        "width": 1440
+      },
+      {
+        "alt": "土地财政怎样连接产业与城市建设",
+        "complete": true,
+        "height": 1660,
+        "width": 1440
+      },
+      {
+        "alt": "地方债的成因与两类治理办法",
+        "complete": true,
+        "height": 1770,
+        "width": 1440
+      },
+      {
+        "alt": "县域电商怎样形成经营与就业",
+        "complete": true,
+        "height": 2010,
+        "width": 1440
+      }
+    ],
+    "overflow": false,
+    "sections": 6,
+    "subheadings": 5,
+    "subsections": 12
+  }
+}
