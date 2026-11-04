@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-28",
+  "notebook": "基层中国的运行逻辑",
+  "title": "《基层中国的运行逻辑》第八章：区域协同发展之路",
+  "url": "https://www.jianshu.com/writer#/notebooks/57350152/notes/145588344",
+  "published": false,
+  "saveLabel": "已保存",
+  "publishControl": "发布文章",
+  "refresh_title_equal": true,
+  "refresh_body_equal": true,
+  "body_sha256": "469fa064bf59e7be6d7b75e9994db7107889e1fc54ba9c953d12a9c63c1397b1",
+  "editor_characters": 9154,
+  "chinese_characters": 6584,
+  "jianshu_display_count": 7349,
+  "images": [
+    {
+      "local": "img/01-活力与秩序的权衡.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-e10ed7ecdc06bbbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    },
+    {
+      "local": "img/02-亲近与清白的评价指标.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-12bb567d5fda32c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    },
+    {
+      "local": "img/03-城市政商关系地图-2019.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-ac1b360ca8ded22c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    },
+    {
+      "local": "img/04-营商环境的五个观察.png",
+      "url": "https://upload-images.jianshu.io/upload_images/15313866-c752ddf53e399365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+    }
+  ],
+  "sections": 2,
+  "subsections": 6,
+  "subheadings": 6,
+  "online_image_preview": {
+    "loaded": 0,
+    "total": 4,
+    "direct_navigation_error": "net::ERR_CERT_COMMON_NAME_INVALID",
+    "certificate_bypassed": false
+  },
+  "local_preview": {
+    "images_loaded": 4,
+    "total": 4,
+    "overflow": false
+  }
+}
